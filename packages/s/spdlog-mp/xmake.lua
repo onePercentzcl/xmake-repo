@@ -44,11 +44,8 @@ package("spdlog-mp")
         if package:config("noexcept") then
             package:add("defines", "SPDLOG_NO_EXCEPTIONS")
         end
-        -- 根据用户项目的编译模式添加 NDEBUG
-        -- release 模式添加 NDEBUG，debug 模式不添加
-        if not package:is_debug() then
-            package:add("defines", "NDEBUG")
-        end
+        -- NDEBUG 由 xmake 的 mode.release 规则自动添加
+        -- 不需要在包配置中手动处理
     end)
 
     on_install(function (package)
