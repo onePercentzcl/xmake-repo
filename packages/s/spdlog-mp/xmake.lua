@@ -5,6 +5,7 @@ package("spdlog-mp")
 
     set_urls("https://github.com/onePercentzcl/spdlog-mp.git")
     add_versions("main", "main")
+    add_versions("v1.0.5", "bea7fb4d609ee10a33dfd8eaf1c58430b43d7579")
     add_versions("v1.0.4", "ab01ac96785e4a4097c439730c07a9fc951fd69b")
     add_versions("v1.0.3", "18b052334abc3a13b15f9280b58342e9ba8be242")
     add_versions("v1.0.2", "86c38586f799e0b32394f36fb1f0a5c1518b98c9")
