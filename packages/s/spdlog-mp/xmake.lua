@@ -44,12 +44,18 @@ package("spdlog-mp")
         if package:config("noexcept") then
             package:add("defines", "SPDLOG_NO_EXCEPTIONS")
         end
+        -- 根据用户项目的编译模式添加 NDEBUG
+        -- release 模式添加 NDEBUG，debug 模式不添加
+        if not package:debug() then
+            package:add("defines", "NDEBUG")
+        end
     end)
 
     on_install(function (package)
         local configs = {}
         
-        -- 强制使用 release 模式编译
+        -- 强制使用 release 模式编译库（禁用调试输出）
+        -- NDEBUG 定义在 on_load 中根据用户项目模式添加
         configs.mode = "release"
         
         if package:config("enable_multiprocess") then
@@ -67,9 +73,6 @@ package("spdlog-mp")
         if package:config("noexcept") then
             configs.no_exceptions = true
         end
-        
-        -- 显式添加 NDEBUG 定义（确保 release 模式格式生效）
-        package:add("defines", "NDEBUG")
         
         import("package.tools.xmake").install(package, configs)
     end)
