@@ -4,7 +4,7 @@
 
 ## 使用方法
 
-在你的项目 `xmake.lua` 中添加：
+在你的项目 `xmake.lua` 中添加仓库：
 
 ```lua
 add_repositories("onePercent-repo https://github.com/onePercentzcl/xmake-repo")
@@ -20,17 +20,10 @@ add_repositories("onePercent-repo https://github.com/onePercentzcl/xmake-repo")
 - 许可证: MIT
 - 版本: v0.0.1
 
-**配置选项：**
-
-| 选项 | 默认值 | 说明 |
-|------|--------|------|
-| shared | false | 构建动态库 |
-| header_only | false | 使用 header-only 模式 |
-| use_fmt | true | 使用内置 fmt 库 |
-
-**示例：**
+**使用方法：**
 
 ```lua
+add_repositories("onePercent-repo https://github.com/onePercentzcl/xmake-repo")
 add_requires("oneplog")
 
 target("myapp")
@@ -39,6 +32,14 @@ target("myapp")
     add_files("*.cpp")
     add_packages("oneplog")
 ```
+
+**配置选项：**
+
+| 选项 | 默认值 | 说明 |
+|------|--------|------|
+| shared | false | 构建动态库 |
+| header_only | false | 使用 header-only 模式 |
+| use_fmt | true | 使用内置 fmt 库 |
 
 ---
 
@@ -49,6 +50,19 @@ target("myapp")
 - 主页: https://github.com/onePercentzcl/spdlog-mp
 - 许可证: MIT
 
+**使用方法：**
+
+```lua
+add_repositories("onePercent-repo https://github.com/onePercentzcl/xmake-repo")
+add_requires("spdlog-mp")
+
+target("myapp")
+    set_kind("binary")
+    set_languages("c++17")
+    add_files("*.cpp")
+    add_packages("spdlog-mp")
+```
+
 **配置选项：**
 
 | 选项 | 默认值 | 说明 |
@@ -58,9 +72,3 @@ target("myapp")
 | std_format | false | 使用 std::format 替代 fmt |
 | fmt_external | false | 使用外部 fmt 库 |
 | noexcept | false | 禁用异常 |
-
-**示例：**
-
-```lua
-add_requires("spdlog-mp", {configs = {enable_multiprocess = true}})
-```
