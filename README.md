@@ -7,17 +7,40 @@
 在你的项目 `xmake.lua` 中添加：
 
 ```lua
-add_repositories("my-repo https://github.com/onePercentzcl/xmake-repo")
-add_requires("spdlog-mp", {configs = {enable_multiprocess = true}})
+add_repositories("onePercent-repo https://github.com/onePercentzcl/xmake-repo")
+```
+
+## 包列表
+
+### oneplog
+
+高性能 C++17 多进程日志系统。
+
+- 主页: https://github.com/onePercentzcl/oneplog
+- 许可证: MIT
+- 版本: v0.0.1
+
+**配置选项：**
+
+| 选项 | 默认值 | 说明 |
+|------|--------|------|
+| shared | false | 构建动态库 |
+| header_only | false | 使用 header-only 模式 |
+| use_fmt | true | 使用内置 fmt 库 |
+
+**示例：**
+
+```lua
+add_requires("oneplog")
 
 target("myapp")
     set_kind("binary")
     set_languages("c++17")
     add_files("*.cpp")
-    add_packages("spdlog-mp")
+    add_packages("oneplog")
 ```
 
-## 包列表
+---
 
 ### spdlog-mp
 
