@@ -5,7 +5,7 @@ package("oneplog")
     
     add_urls("https://github.com/onePercentzcl/oneplog/archive/refs/tags/$(version).tar.gz",
              "https://github.com/onePercentzcl/oneplog.git")
-    add_versions("v0.3.0", "42a70c45503f167eb06360ed02855729a515bf589b9a3a2f341790e7916a5100")
+    add_versions("v0.3.0", "d1f4c5c6cf4eca3ae69938f03800db21280718a86518f0974b8c6c01c560e1f9")
     add_versions("v0.2.1", "745c0f8a1f321368cde93c8e7667408d9b6a3de148daf524c51aca28908997b0")
     add_versions("v0.2.0", "b2d02191711d9919d9330d03c000c425aa0a1c05de831d029e55b2aa17d62f36")
     add_versions("v0.1.3", "a90a9ba79fab439e3b1a40dce576366abd2521cb6db75d79e6aa8d20f89ab895")
